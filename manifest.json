@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "FBIG Stories Unseen",
+    "description": "Hide your 'seen' status on Facebook and Instagram Stories with a simple toggle.",
+    "version": "1.0.0",
+    "icons": {
+      "128": "icons/icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.facebook.com/*",
+          "https://www.instagram.com/*"
+        ],
+        "js": [
+          "scripts/inject.js"
+        ],
+        "run_at": "document_start"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "scripts/unseen.js"
+        ],
+        "matches": [
+          "https://www.facebook.com/*",
+          "https://www.instagram.com/*"
+        ]
+      }
+    ],
+    "permissions": [
+      "storage",
+      "scripting",
+      "activeTab",
+      "tabs"
+    ],
+    "host_permissions": [
+      "https://www.facebook.com/*",
+      "https://www.instagram.com/*"
+    ],
+    "action": {
+      "default_popup": "popup/popup.html"
+    }
+  }

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Stories Unseen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #161b22;
+      --text-color: #c9d1d9;
+      --subtext-color: #8b949e;
+      --border-color: #30363d;
+      --primary-color: #444d56;
+      --primary-hover: #117cf5;
+      --error-color: #ff4d4d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      width: 280px;
+      padding: 0;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--border-color);
+      margin: 20px 0;
+    }
+
+    .title-popup {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+
+    p {
+      margin: 10px 0;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .header {
+      background: #0d1117;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .popup-container {
+      padding: 16px;
+    }
+
+    .power-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0px 0;
+    }
+
+    .power-btn button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+
+    .power-btn svg {
+      width: 90px;
+      height: 90px;
+      fill: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .power-btn button:hover svg {
+      filter: brightness(1.4);
+    }
+
+    .header.error {
+      color: var(--error-color);
+    }
+
+    .info {
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--subtext-color);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid var(--border-color);
+      background: #0d1117;
+    }
+
+    .footer button {
+      background: none;
+      border: none;
+      color: #8793a3;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .footer button:hover {
+      background: var(--border-color);
+      color: white;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="header" id="site-header">unknown</div>
+  <div class="popup-container">
+    <div class="power-btn">
+      <button id="toggle-feature" title="Enable/Disable">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <g stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M432,448a15.92,15.92,0,0,1-11.31-4.69l-352-352A16,16,0,0,1,91.31,68.69l352,352A16,16,0,0,1,432,448Z">
+            </path>
+            <path d="M248,315.85l-51.79-51.79a2,2,0,0,0-3.39,1.69,64.11,64.11,0,0,0,53.49,53.49A2,2,0,0,0,248,315.85Z">
+            </path>
+            <path d="M264,196.15,315.87,248a2,2,0,0,0,3.4-1.69,64.13,64.13,0,0,0-53.55-53.55A2,2,0,0,0,264,196.15Z">
+            </path>
+            <path
+              d="M491,273.36a32.2,32.2,0,0,0-.1-34.76c-26.46-40.92-60.79-75.68-99.27-100.53C349,110.55,302,96,255.68,96a226.54,226.54,0,0,0-71.82,11.79,4,4,0,0,0-1.56,6.63l47.24,47.24a4,4,0,0,0,3.82,1.05,96,96,0,0,1,116,116,4,4,0,0,0,1.05,3.81l67.95,68a4,4,0,0,0,5.4.24A343.81,343.81,0,0,0,491,273.36Z">
+            </path>
+            <path
+              d="M256,352a96,96,0,0,1-93.3-118.63,4,4,0,0,0-1.05-3.81L94.81,162.69a4,4,0,0,0-5.41-.23c-24.39,20.81-47,46.13-67.67,75.72a31.92,31.92,0,0,0-.64,35.54c26.41,41.33,60.39,76.14,98.28,100.65C162.06,402,207.92,416,255.68,416a238.22,238.22,0,0,0,72.64-11.55,4,4,0,0,0,1.61-6.64l-47.47-47.46a4,4,0,0,0-3.81-1.05A96,96,0,0,1,256,352Z">
+            </path>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <hr>
+    <div class="info">
+      <div class="title-popup">Hide 'seen' status on Stories</div>
+      <p>Facebook & Instagram</p>
+      <div><small>Refresh the page (F5) to activate the feature</small></div>
+    </div>
+  </div>
+  <div class="footer">
+    <button title="Github"><i class="fa-brands fa-github"></i></button>
+    <button title="Source"><i class="fa-solid fa-code"></i></button>
+    <button title="Facebook"><i class="fa-brands fa-facebook"></i></button>
+    <button title="Update" id="update-button"><i class="fas fa-arrow-alt-circle-down"></i></button>
+  </div>
+</body>
+<script src="popup.js"></script>
+
+</html>
