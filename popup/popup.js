@@ -74,7 +74,7 @@
 
   const updateButton = document.getElementById('update-button');
   const currentVersion = chrome.runtime.getManifest().version;
-  const versionURL = 'https://raw.githubusercontent.com/DuckCIT/FBIG-Stories-Unseen/main/version.json';
+  const versionURL = 'https://raw.githubusercontent.com/DuckCIT/FBIG-Stories-Unseen/main/data/version.json';
 
   fetch(versionURL)
     .then(response => response.json())
